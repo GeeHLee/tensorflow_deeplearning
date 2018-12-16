@@ -47,7 +47,7 @@ neural_net = NeuralNet()
 # Cross-Entropy loss function
 def loss_fn(inference_fn, inputs, labels):
     # Using sparse_softmax cross entropy
-    return tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(
+    return tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(
         logits=inference_fn(inputs)), labels=labels)
 
 
